@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:if test="${errors != null}">
     <div id="flush_error">
-        入力内容にエラーがあります。<br />
+       <br />
         <c:forEach var="error" items="${errors}">
             ・<c:out value="${error}" /><br />
         </c:forEach>
@@ -25,6 +25,14 @@
 <label for="content">内容</label><br />
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
+
+<label for="time_in">出勤時間</label><br />
+<input type="text" name="time_in" value="${report.time_in}" />
+<br /><br />
+<label for="time_out">退勤時間</label><br />
+<input type="text" name="time_out" value="${report.time_out}" />
+<br /><br />
+
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>
